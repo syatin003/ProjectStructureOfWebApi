@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StepanEktron_oldModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BusinessUnit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SortOrder" Type="Int32" />
+    <NavigationProperty Name="SalesOfficeServiceLocations" Relationship="Self.FK_SalesOfficeServiceLocations_BusinessUnits" FromRole="BusinessUnits" ToRole="SalesOfficeServiceLocations" />
+  </EntityType>
+  <EntityType Name="country_tbl">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShortIsoCode" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LongIsoCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="date_created" Type="DateTime" Precision="3" />
+    <Property Name="date_modified" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="region_tbl" Relationship="Self.FK_region_country_tbl" FromRole="country_tbl" ToRole="region_tbl" />
+  </EntityType>
+  <EntityType Name="ProductFinder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Brand" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AcidValue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CloudPoint" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CMC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Density" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DravesWetting" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FlashPoint" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FoamDensity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FormAt25C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FreeFattyAcid" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FreezePoint" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HLB" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HydroxylValue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="InsulationValue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IntrafacialTension" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Kosher" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MolesOfEO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MolesOfPO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OH_Functionality" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PercentActive" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PourPoint" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Solids" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SpecificGravity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SurfaceTension" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ThermalStability" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Triglycerides" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ViscosityAt25C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="VOC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CanOrder" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ChemicalDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AcidNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ApproxTgC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ViscosityAt200C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ViscosityAtC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProductFinderLinks" Relationship="Self.FK_ProductFinderLinks_ProductFinder" FromRole="ProductFinder" ToRole="ProductFinderLinks" />
+  </EntityType>
+  <EntityType Name="ProductFinderLink">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int64" Nullable="false" />
+    <Property Name="TaxonomyID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="ProductFinder" Relationship="Self.FK_ProductFinderLinks_ProductFinder" FromRole="ProductFinderLinks" ToRole="ProductFinder" />
+    <NavigationProperty Name="ProductFinderTaxonomy" Relationship="Self.FK_ProductFinderLinks_ProductFinderTaxonomies" FromRole="ProductFinderLinks" ToRole="ProductFinderTaxonomies" />
+  </EntityType>
+  <EntityType Name="ProductFinderTaxonomy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ProductFinderLinks" Relationship="Self.FK_ProductFinderLinks_ProductFinderTaxonomies" FromRole="ProductFinderTaxonomies" ToRole="ProductFinderLinks" />
+  </EntityType>
+  <EntityType Name="ProductTaxonomySummary">
+    <Key>
+      <PropertyRef Name="item_id" />
+    </Key>
+    <Property Name="item_id" Type="Int32" Nullable="false" />
+    <Property Name="markets" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="applications" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="chemGroups" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="region_tbl">
+    <Key>
+      <PropertyRef Name="RegionId" />
+    </Key>
+    <Property Name="RegionId" Type="Int64" Nullable="false" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AlphaCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="date_created" Type="DateTime" Precision="3" />
+    <Property Name="date_modified" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="country_tbl" Relationship="Self.FK_region_country_tbl" FromRole="region_tbl" ToRole="country_tbl" />
+  </EntityType>
+  <EntityType Name="SalesOffice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContactName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneAlt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SalesOfficeServiceLocations" Relationship="Self.FK_SalesOfficeServiceLocations_SalesOffices" FromRole="SalesOffices" ToRole="SalesOfficeServiceLocations" />
+  </EntityType>
+  <EntityType Name="SalesOfficeServiceLocation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BusinessUnitID" Type="Int32" Nullable="false" />
+    <Property Name="StateID" Type="Int32" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="SalesOfficeID" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BusinessUnit" Relationship="Self.FK_SalesOfficeServiceLocations_BusinessUnits" FromRole="SalesOfficeServiceLocations" ToRole="BusinessUnits" />
+    <NavigationProperty Name="SalesOffice" Relationship="Self.FK_SalesOfficeServiceLocations_SalesOffices" FromRole="SalesOfficeServiceLocations" ToRole="SalesOffices" />
+  </EntityType>
+  <Association Name="FK_SalesOfficeServiceLocations_BusinessUnits">
+    <End Role="BusinessUnits" Type="Self.BusinessUnit" Multiplicity="1" />
+    <End Role="SalesOfficeServiceLocations" Type="Self.SalesOfficeServiceLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessUnits">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SalesOfficeServiceLocations">
+        <PropertyRef Name="BusinessUnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_region_country_tbl">
+    <End Role="country_tbl" Type="Self.country_tbl" Multiplicity="1" />
+    <End Role="region_tbl" Type="Self.region_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country_tbl">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="region_tbl">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductFinderLinks_ProductFinder">
+    <End Role="ProductFinder" Type="Self.ProductFinder" Multiplicity="1" />
+    <End Role="ProductFinderLinks" Type="Self.ProductFinderLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductFinder">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductFinderLinks">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductFinderLinks_ProductFinderTaxonomies">
+    <End Role="ProductFinderTaxonomies" Type="Self.ProductFinderTaxonomy" Multiplicity="1" />
+    <End Role="ProductFinderLinks" Type="Self.ProductFinderLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductFinderTaxonomies">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductFinderLinks">
+        <PropertyRef Name="TaxonomyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesOfficeServiceLocations_SalesOffices">
+    <End Role="SalesOffices" Type="Self.SalesOffice" Multiplicity="1" />
+    <End Role="SalesOfficeServiceLocations" Type="Self.SalesOfficeServiceLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SalesOffices">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SalesOfficeServiceLocations">
+        <PropertyRef Name="SalesOfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StepanEktron_oldEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BusinessUnits" EntityType="Self.BusinessUnit" />
+    <EntitySet Name="country_tbl" EntityType="Self.country_tbl" />
+    <EntitySet Name="ProductFinders" EntityType="Self.ProductFinder" />
+    <EntitySet Name="ProductFinderLinks" EntityType="Self.ProductFinderLink" />
+    <EntitySet Name="ProductFinderTaxonomies" EntityType="Self.ProductFinderTaxonomy" />
+    <EntitySet Name="ProductTaxonomySummaries" EntityType="Self.ProductTaxonomySummary" />
+    <EntitySet Name="region_tbl" EntityType="Self.region_tbl" />
+    <EntitySet Name="SalesOffices" EntityType="Self.SalesOffice" />
+    <EntitySet Name="SalesOfficeServiceLocations" EntityType="Self.SalesOfficeServiceLocation" />
+    <AssociationSet Name="FK_SalesOfficeServiceLocations_BusinessUnits" Association="Self.FK_SalesOfficeServiceLocations_BusinessUnits">
+      <End Role="BusinessUnits" EntitySet="BusinessUnits" />
+      <End Role="SalesOfficeServiceLocations" EntitySet="SalesOfficeServiceLocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_region_country_tbl" Association="Self.FK_region_country_tbl">
+      <End Role="country_tbl" EntitySet="country_tbl" />
+      <End Role="region_tbl" EntitySet="region_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductFinderLinks_ProductFinder" Association="Self.FK_ProductFinderLinks_ProductFinder">
+      <End Role="ProductFinder" EntitySet="ProductFinders" />
+      <End Role="ProductFinderLinks" EntitySet="ProductFinderLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductFinderLinks_ProductFinderTaxonomies" Association="Self.FK_ProductFinderLinks_ProductFinderTaxonomies">
+      <End Role="ProductFinderTaxonomies" EntitySet="ProductFinderTaxonomies" />
+      <End Role="ProductFinderLinks" EntitySet="ProductFinderLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesOfficeServiceLocations_SalesOffices" Association="Self.FK_SalesOfficeServiceLocations_SalesOffices">
+      <End Role="SalesOffices" EntitySet="SalesOffices" />
+      <End Role="SalesOfficeServiceLocations" EntitySet="SalesOfficeServiceLocations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

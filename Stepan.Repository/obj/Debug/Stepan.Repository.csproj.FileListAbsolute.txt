@@ -1,0 +1,12 @@
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Repository\bin\Stepan.Repository.dll.config
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Repository\bin\Stepan.Repository.dll
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Repository\bin\Stepan.Repository.pdb
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Repository\bin\EntityFramework.dll
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Repository\bin\EntityFramework.SqlServer.dll
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Repository\bin\Stepan.Common.dll
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Repository\bin\Stepan.Common.pdb
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Repository\bin\EntityFramework.xml
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Repository\bin\EntityFramework.SqlServer.xml
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Repository\obj\Debug\Stepan.Repository.csprojResolveAssemblyReference.cache
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Repository\obj\Debug\Stepan.Repository.dll
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Repository\obj\Debug\Stepan.Repository.pdb

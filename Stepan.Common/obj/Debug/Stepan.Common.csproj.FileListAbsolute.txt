@@ -1,0 +1,6 @@
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Common\bin\Stepan.Common.dll.config
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Common\bin\Stepan.Common.dll
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Common\bin\Stepan.Common.pdb
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Common\obj\Debug\Stepan.Common.csprojResolveAssemblyReference.cache
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Common\obj\Debug\Stepan.Common.dll
+C:\Users\Yatin\Documents\Visual Studio 2013\Projects\Stepan.Api\Stepan.Common\obj\Debug\Stepan.Common.pdb

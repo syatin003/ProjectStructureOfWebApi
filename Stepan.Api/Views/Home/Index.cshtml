@@ -1,0 +1,306 @@
+﻿<div class="jumbotron">
+    <form id="loginn" role="form">
+
+        <div class="form-group">
+            <label for="txtemail">UserName</label>
+            <input type="text" class="form-control" id="txtemail" name="UserName"
+                   placeholder="Enter UserName">
+        </div>
+        <div class="form-group">
+            <label for="txtpassword">Password</label>
+            <input type="password" class="form-control" id="txtpassword" name="Password"
+                   placeholder=" Password">
+        </div>
+        <button id="btnlogin" type="button" class="btn btn-default">Login</button>
+        <button id="btn2" type="button" class="btn btn-default">getAllCategories</button>
+        <button id="btn3" type="button" class="btn btn-default">getAllBrandNames</button>
+        <button id="btn4" type="button" class="btn btn-default">getAllChemicalDesc</button>
+        <button id="btn5" type="button" class="btn btn-default">getAllChemicalNames</button>
+        <button id="btn6" type="button" class="btn btn-default">getCategory</button>
+        <button id="btn7" type="button" class="btn btn-default">getBrandName</button>
+        <button id="btn8" type="button" class="btn btn-default">getChemDesc</button>
+        <button id="btn9" type="button" class="btn btn-default">getChemName</button>
+        <button id="btn10" type="button" class="btn btn-default">getSearchResult</button>
+        <button id="btn11" type="button" class="btn btn-default">GetSubCategoryOfPolymer</button>
+        <button id="btn12" type="button" class="btn btn-default">GetDescriptionOfSubCategory</button>
+        <button id="btn13" type="button" class="btn btn-default">GetData</button>
+
+        <script>
+            //Genearte Access Token
+            var a = "";
+            var b = "";
+            var signin = function () {
+                var tokenUrl = "/Token";
+                var UserName = $("#txtemail").val();
+                var Password = $("#txtpassword").val();
+                var grant_type = "password";
+                var DeviceId = "abcfefefefw";
+                var loginData = {
+                    UserName: UserName, Password: Password, grant_type: grant_type, DeviceId: DeviceId
+                };
+                $.post(tokenUrl, loginData, function (data) {
+
+                    alert(JSON.stringify(data));
+                    localStorage.setItem('AuthToken', data.access_token);
+                    localStorage.setItem('AntiForgeryToken', data.AntiForgeryToken);
+                    // localStorage.setItem('name', data.userName);
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+                });
+            };
+            $(document).ready(function () {
+
+                $("#btnlogin").click(signin);
+
+
+                //GetAllCategories
+                $("#btn2").click(function () {
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+                    $.ajax({
+                        url: "/api/stepan/GetAllCategories",
+                        type: "GET",
+                        headers: {
+                            "Authorization": "Bearer " + a,
+                            'DeviceId': "abcfefefef",
+                            "AntiForgeryToken": b
+                        },
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                        },
+                        error: function (msg) { alert(JSON.stringify(msg)) }
+                    })
+                });
+                //GetAllBrandNames
+                $("#btn3").click(function () {
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+
+                    $.ajax({
+                        url: "/api/stepan/GetAllBrandNames",
+                        type: "GET",
+                        headers: {
+                            "Authorization": "Bearer " + a,
+                            'DeviceId': "abcfefefefw",
+                            "AntiForgeryToken": b
+                        },
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                        },
+                        error: function (msg) { alert(JSON.stringify(msg)) }
+                    })
+                });
+
+                //GetAllChemicalGroups
+                $("#btn4").click(function () {
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+                    $.ajax({
+                        url: "/api/stepan/GetAllChemicalGroups",
+                        type: "GET",
+                        headers: {
+                            "Authorization": "Bearer " + a,
+                            'DeviceId': "abcfefefefw",
+                            "AntiForgeryToken": b
+                        },
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                        },
+                        error: function (msg) { alert(JSON.stringify(msg)) }
+                    })
+                });
+
+                //GetAllChemicalNames
+                $("#btn5").click(function () {
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+                    $.ajax({
+                        url: "/api/stepan/GetAllChemicalNames",
+                        type: "GET",
+                        headers: {
+                            "Authorization": "Bearer " + a,
+                            'DeviceId': "abcfefefefw",
+                            "AntiForgeryToken": b
+                        },
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                        },
+                        error: function (msg) { alert(JSON.stringify(msg)) }
+                    })
+                });
+
+
+
+                //GetCategory
+                $("#btn6").click(function () {
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+                    var Category = "Surfactants";//Surfactants
+
+                    $.ajax({
+                        url: "/api/stepan/GetCategory?Category=" + Category,
+                        type: "Get",
+                        headers: {
+                            "Authorization": "Bearer " + a,
+                            'DeviceId': "abcfefefefw",
+                            "AntiForgeryToken": b
+                        },
+
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                        },
+                        error: function (msg) {
+                            alert(JSON.stringify(msg));
+                        }
+                    })
+                });
+
+                //GetBrandName
+                $("#btn7").click(function () {
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+                    var Brand = "HALLCOMID";//HALLCOMID
+                    $.ajax({
+                        url: "/api/stepan/GetBrandName?Brand=" + Brand,
+                        type: "GET",
+                        headers: {
+                            "Authorization": "Bearer " + a,
+                            'DeviceId': "abcfefefefw",
+                            "AntiForgeryToken": b
+                        },
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                        },
+                        error: function (msg) { alert(JSON.stringify(msg)); }
+                    });
+                });
+
+                //GetChemGroup
+                $("#btn8").click(function () {
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+                    var ChemGroup = " Methyl Sulfate Quaternary";//CETYL BETAINE
+                    //AMMONIUM LAURYL SULFATE
+                    $.ajax({
+                        url: "/api/stepan/GetChemicalGroup?ChemGroup=" + ChemGroup,
+                        type: "GET",
+                        headers: {
+                            "Authorization": "Bearer " + a,
+                            'DeviceId': "abcfefefefw",
+                            "AntiForgeryToken": b
+                        },
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                        },
+                        error: function (msg) { alert(JSON.stringify(msg)) }
+                    })
+                });
+
+                //GetChemName
+                $("#btn9").click(function () {
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+                    var ChemName = "Sulfates";//Sulfates
+                    $.ajax({
+                        url: "/api/stepan/GetChemicalName?Name=" + ChemName,
+                        type: "GET",
+                        headers: {
+                            "Authorization": "Bearer " + a,
+                            'DeviceId': "abcfefefefw",
+                            "AntiForgeryToken": b
+                        },
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                        },
+                        error: function (msg) { alert(JSON.stringify(msg)); }
+                    })
+                });
+
+                //GetSearchResult
+                $("#btn10").click(function () {
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+                    var Query = "NACCONOL® 90G";//NACCONOL® 90G
+                    $.ajax({
+                        url: "/api/stepan/GetSearchResult?Query=" + Query,
+                        type: "GET",
+                        headers: {
+                            "Authorization": "Bearer " + a,
+                            'DeviceId': "abcfefefefw",
+                            "AntiForgeryToken": b
+                        },
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                        },
+                        error: function (msg) { alert(JSON.stringify(msg)); }
+                    })
+                });
+
+
+                //GetSubCategoryOfCategory
+                $("#btn11").click(function () {
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+                    var Query = "Specialty Products";//polymers  Specialty Products  Surfactants
+                    $.ajax({
+                        url: "/api/stepan/GetSubCategoryOfCategory?category=" + Query,
+                        type: "GET",
+                        headers: {
+                            "Authorization": "Bearer " + a,
+                            'DeviceId': "abcfefefefw",
+                            "AntiForgeryToken": b
+                        },
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                        },
+                        error: function (msg) { alert(JSON.stringify(msg)) }
+                    })
+                });
+
+
+
+                //GetDescriptionOfSubCategory
+                $("#btn12").click(function () {
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+                    var Query = "PHTHALIC ANHYDRIDE";//PHTHALIC ANHYDRIDE
+                    $.ajax({
+                        url: "/api/stepan/GetDescriptionOfSubCategory?brand=" + Query,
+                        type: "GET",
+                        headers: {
+                            "Authorization": "Bearer " + a,
+                            'DeviceId': "abcfefefefw",
+                            "AntiForgeryToken": b
+                        },
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                        },
+                        error: function (msg) { alert(JSON.stringify(msg)) }
+                    })
+                });
+
+
+                //GetDescriptionOfSubCategory
+                $("#btn13").click(function () {
+                    a = localStorage.getItem('AuthToken');
+                    b = localStorage.getItem('AntiForgeryToken');
+                    var Parameter = " Industrial Products, Laundry and Cleaning";
+                    // Industrial Products, Laundry and Cleaning_ Methyl Sulfate Quaternary_ ACCOSOFT® 440-75%
+                    $.ajax({
+                        url: "/api/stepan/GetData?parameter=" + Parameter,
+                        type: "GET",
+                        headers: {
+                            "Authorization": "Bearer " + a,
+                            'DeviceId': "abcfefefefw",
+                            "AntiForgeryToken": b
+                        },
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                        },
+                        error: function (msg) { alert(JSON.stringify(msg)) }
+                    })
+                });
+            });
+        </script>
+    </form>
+</div>

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StepanEktron_oldModelStoreContainer" CdmEntityContainer="StepanEktron_oldEntities">
+    <EntitySetMapping Name="BusinessUnits">
+      <EntityTypeMapping TypeName="StepanEktron_oldModel.BusinessUnit">
+        <MappingFragment StoreEntitySet="BusinessUnits">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="country_tbl">
+      <EntityTypeMapping TypeName="StepanEktron_oldModel.country_tbl">
+        <MappingFragment StoreEntitySet="country_tbl">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortIsoCode" ColumnName="ShortIsoCode" />
+          <ScalarProperty Name="LongIsoCode" ColumnName="LongIsoCode" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="date_modified" ColumnName="date_modified" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductFinders">
+      <EntityTypeMapping TypeName="StepanEktron_oldModel.ProductFinder">
+        <MappingFragment StoreEntitySet="ProductFinder">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AcidValue" ColumnName="AcidValue" />
+          <ScalarProperty Name="CloudPoint" ColumnName="CloudPoint" />
+          <ScalarProperty Name="CMC" ColumnName="CMC" />
+          <ScalarProperty Name="Density" ColumnName="Density" />
+          <ScalarProperty Name="DravesWetting" ColumnName="DravesWetting" />
+          <ScalarProperty Name="FlashPoint" ColumnName="FlashPoint" />
+          <ScalarProperty Name="FoamDensity" ColumnName="FoamDensity" />
+          <ScalarProperty Name="FormAt25C" ColumnName="FormAt25C" />
+          <ScalarProperty Name="FreeFattyAcid" ColumnName="FreeFattyAcid" />
+          <ScalarProperty Name="FreezePoint" ColumnName="FreezePoint" />
+          <ScalarProperty Name="HLB" ColumnName="HLB" />
+          <ScalarProperty Name="HydroxylValue" ColumnName="HydroxylValue" />
+          <ScalarProperty Name="InsulationValue" ColumnName="InsulationValue" />
+          <ScalarProperty Name="IntrafacialTension" ColumnName="IntrafacialTension" />
+          <ScalarProperty Name="Kosher" ColumnName="Kosher" />
+          <ScalarProperty Name="MolesOfEO" ColumnName="MolesOfEO" />
+          <ScalarProperty Name="MolesOfPO" ColumnName="MolesOfPO" />
+          <ScalarProperty Name="OH_Functionality" ColumnName="OH_Functionality" />
+          <ScalarProperty Name="PercentActive" ColumnName="PercentActive" />
+          <ScalarProperty Name="PourPoint" ColumnName="PourPoint" />
+          <ScalarProperty Name="Solids" ColumnName="Solids" />
+          <ScalarProperty Name="SpecificGravity" ColumnName="SpecificGravity" />
+          <ScalarProperty Name="SurfaceTension" ColumnName="SurfaceTension" />
+          <ScalarProperty Name="ThermalStability" ColumnName="ThermalStability" />
+          <ScalarProperty Name="Triglycerides" ColumnName="Triglycerides" />
+          <ScalarProperty Name="ViscosityAt25C" ColumnName="ViscosityAt25C" />
+          <ScalarProperty Name="VOC" ColumnName="VOC" />
+          <ScalarProperty Name="CanOrder" ColumnName="CanOrder" />
+          <ScalarProperty Name="ChemicalDescription" ColumnName="ChemicalDescription" />
+          <ScalarProperty Name="AcidNumber" ColumnName="AcidNumber" />
+          <ScalarProperty Name="ApproxTgC" ColumnName="ApproxTgC" />
+          <ScalarProperty Name="ViscosityAt200C" ColumnName="ViscosityAt200C" />
+          <ScalarProperty Name="ViscosityAtC" ColumnName="ViscosityAtC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductFinderLinks">
+      <EntityTypeMapping TypeName="StepanEktron_oldModel.ProductFinderLink">
+        <MappingFragment StoreEntitySet="ProductFinderLinks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="TaxonomyID" ColumnName="TaxonomyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductFinderTaxonomies">
+      <EntityTypeMapping TypeName="StepanEktron_oldModel.ProductFinderTaxonomy">
+        <MappingFragment StoreEntitySet="ProductFinderTaxonomies">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTaxonomySummaries">
+      <EntityTypeMapping TypeName="StepanEktron_oldModel.ProductTaxonomySummary">
+        <MappingFragment StoreEntitySet="ProductTaxonomySummaries">
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="markets" ColumnName="markets" />
+          <ScalarProperty Name="applications" ColumnName="applications" />
+          <ScalarProperty Name="chemGroups" ColumnName="chemGroups" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="region_tbl">
+      <EntityTypeMapping TypeName="StepanEktron_oldModel.region_tbl">
+        <MappingFragment StoreEntitySet="region_tbl">
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AlphaCode" ColumnName="AlphaCode" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="date_modified" ColumnName="date_modified" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesOffices">
+      <EntityTypeMapping TypeName="StepanEktron_oldModel.SalesOffice">
+        <MappingFragment StoreEntitySet="SalesOffices">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="PhoneAlt" ColumnName="PhoneAlt" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesOfficeServiceLocations">
+      <EntityTypeMapping TypeName="StepanEktron_oldModel.SalesOfficeServiceLocation">
+        <MappingFragment StoreEntitySet="SalesOfficeServiceLocations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="BusinessUnitID" ColumnName="BusinessUnitID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="SalesOfficeID" ColumnName="SalesOfficeID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

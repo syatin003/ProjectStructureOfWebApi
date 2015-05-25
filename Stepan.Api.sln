@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stepan.Api", "Stepan.Api\Stepan.Api.csproj", "{55F6AC48-9A8C-48CF-A320-C03182CE0006}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stepan.Common", "Stepan.Common\Stepan.Common.csproj", "{22B0A6F8-174B-458E-B0A2-62344C6D4731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stepan.Repository", "Stepan.Repository\Stepan.Repository.csproj", "{1D3BD222-7AEC-4DDF-99D4-8CB1DCBEE346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stepan.Service", "Stepan.Service\Stepan.Service.csproj", "{35DE0869-F844-4258-969D-2263E96DB1AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55F6AC48-9A8C-48CF-A320-C03182CE0006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F6AC48-9A8C-48CF-A320-C03182CE0006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F6AC48-9A8C-48CF-A320-C03182CE0006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F6AC48-9A8C-48CF-A320-C03182CE0006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B0A6F8-174B-458E-B0A2-62344C6D4731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B0A6F8-174B-458E-B0A2-62344C6D4731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B0A6F8-174B-458E-B0A2-62344C6D4731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B0A6F8-174B-458E-B0A2-62344C6D4731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D3BD222-7AEC-4DDF-99D4-8CB1DCBEE346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D3BD222-7AEC-4DDF-99D4-8CB1DCBEE346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D3BD222-7AEC-4DDF-99D4-8CB1DCBEE346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D3BD222-7AEC-4DDF-99D4-8CB1DCBEE346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35DE0869-F844-4258-969D-2263E96DB1AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35DE0869-F844-4258-969D-2263E96DB1AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35DE0869-F844-4258-969D-2263E96DB1AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35DE0869-F844-4258-969D-2263E96DB1AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

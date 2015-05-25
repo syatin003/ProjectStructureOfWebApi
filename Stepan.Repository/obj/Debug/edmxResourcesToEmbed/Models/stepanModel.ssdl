@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StepanEktron_oldModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BusinessUnits">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SortOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="country_tbl">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShortIsoCode" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="LongIsoCode" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Enabled" Type="bit" Nullable="false" />
+    <Property Name="date_created" Type="datetime" />
+    <Property Name="date_modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductFinder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="200" />
+    <Property Name="Brand" Type="nvarchar" MaxLength="100" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="AcidValue" Type="varchar" MaxLength="100" />
+    <Property Name="CloudPoint" Type="varchar" MaxLength="100" />
+    <Property Name="CMC" Type="varchar" MaxLength="100" />
+    <Property Name="Density" Type="varchar" MaxLength="100" />
+    <Property Name="DravesWetting" Type="varchar" MaxLength="100" />
+    <Property Name="FlashPoint" Type="varchar" MaxLength="100" />
+    <Property Name="FoamDensity" Type="varchar" MaxLength="100" />
+    <Property Name="FormAt25C" Type="varchar" MaxLength="100" />
+    <Property Name="FreeFattyAcid" Type="varchar" MaxLength="100" />
+    <Property Name="FreezePoint" Type="varchar" MaxLength="100" />
+    <Property Name="HLB" Type="varchar" MaxLength="100" />
+    <Property Name="HydroxylValue" Type="varchar" MaxLength="100" />
+    <Property Name="InsulationValue" Type="varchar" MaxLength="100" />
+    <Property Name="IntrafacialTension" Type="varchar" MaxLength="100" />
+    <Property Name="Kosher" Type="varchar" MaxLength="100" />
+    <Property Name="MolesOfEO" Type="varchar" MaxLength="100" />
+    <Property Name="MolesOfPO" Type="varchar" MaxLength="100" />
+    <Property Name="OH_Functionality" Type="varchar" MaxLength="100" />
+    <Property Name="PercentActive" Type="varchar" MaxLength="100" />
+    <Property Name="PourPoint" Type="varchar" MaxLength="100" />
+    <Property Name="Solids" Type="varchar" MaxLength="100" />
+    <Property Name="SpecificGravity" Type="varchar" MaxLength="100" />
+    <Property Name="SurfaceTension" Type="varchar" MaxLength="100" />
+    <Property Name="ThermalStability" Type="varchar" MaxLength="100" />
+    <Property Name="Triglycerides" Type="varchar" MaxLength="100" />
+    <Property Name="ViscosityAt25C" Type="varchar" MaxLength="100" />
+    <Property Name="VOC" Type="varchar" MaxLength="100" />
+    <Property Name="CanOrder" Type="varchar" MaxLength="100" />
+    <Property Name="ChemicalDescription" Type="varchar" MaxLength="200" />
+    <Property Name="AcidNumber" Type="varchar" MaxLength="100" />
+    <Property Name="ApproxTgC" Type="varchar" MaxLength="100" />
+    <Property Name="ViscosityAt200C" Type="varchar" MaxLength="100" />
+    <Property Name="ViscosityAtC" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProductFinderLinks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+    <Property Name="TaxonomyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductFinderTaxonomies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductTaxonomySummaries">
+    <Key>
+      <PropertyRef Name="item_id" />
+    </Key>
+    <Property Name="item_id" Type="int" Nullable="false" />
+    <Property Name="markets" Type="text" />
+    <Property Name="applications" Type="text" />
+    <Property Name="chemGroups" Type="text" />
+  </EntityType>
+  <EntityType Name="region_tbl">
+    <Key>
+      <PropertyRef Name="RegionId" />
+    </Key>
+    <Property Name="RegionId" Type="bigint" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AlphaCode" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Enabled" Type="bit" Nullable="false" />
+    <Property Name="date_created" Type="datetime" />
+    <Property Name="date_modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SalesOffices">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="100" />
+    <Property Name="Address2" Type="varchar" MaxLength="100" />
+    <Property Name="Address3" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="100" />
+    <Property Name="Zip" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="ContactName" Type="varchar" MaxLength="500" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneAlt" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Website" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SalesOfficeServiceLocations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BusinessUnitID" Type="int" Nullable="false" />
+    <Property Name="StateID" Type="int" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="SalesOfficeID" Type="int" Nullable="false" />
+    <Property Name="Note" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <Association Name="FK_ProductFinderLinks_ProductFinder">
+    <End Role="ProductFinder" Type="Self.ProductFinder" Multiplicity="1" />
+    <End Role="ProductFinderLinks" Type="Self.ProductFinderLinks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductFinder">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductFinderLinks">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductFinderLinks_ProductFinderTaxonomies">
+    <End Role="ProductFinderTaxonomies" Type="Self.ProductFinderTaxonomies" Multiplicity="1" />
+    <End Role="ProductFinderLinks" Type="Self.ProductFinderLinks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductFinderTaxonomies">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductFinderLinks">
+        <PropertyRef Name="TaxonomyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_region_country_tbl">
+    <End Role="country_tbl" Type="Self.country_tbl" Multiplicity="1" />
+    <End Role="region_tbl" Type="Self.region_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country_tbl">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="region_tbl">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesOfficeServiceLocations_BusinessUnits">
+    <End Role="BusinessUnits" Type="Self.BusinessUnits" Multiplicity="1" />
+    <End Role="SalesOfficeServiceLocations" Type="Self.SalesOfficeServiceLocations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessUnits">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SalesOfficeServiceLocations">
+        <PropertyRef Name="BusinessUnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesOfficeServiceLocations_SalesOffices">
+    <End Role="SalesOffices" Type="Self.SalesOffices" Multiplicity="1" />
+    <End Role="SalesOfficeServiceLocations" Type="Self.SalesOfficeServiceLocations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SalesOffices">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SalesOfficeServiceLocations">
+        <PropertyRef Name="SalesOfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StepanEktron_oldModelStoreContainer">
+    <EntitySet Name="BusinessUnits" EntityType="Self.BusinessUnits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="country_tbl" EntityType="Self.country_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductFinder" EntityType="Self.ProductFinder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductFinderLinks" EntityType="Self.ProductFinderLinks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductFinderTaxonomies" EntityType="Self.ProductFinderTaxonomies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductTaxonomySummaries" EntityType="Self.ProductTaxonomySummaries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="region_tbl" EntityType="Self.region_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalesOffices" EntityType="Self.SalesOffices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalesOfficeServiceLocations" EntityType="Self.SalesOfficeServiceLocations" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ProductFinderLinks_ProductFinder" Association="Self.FK_ProductFinderLinks_ProductFinder">
+      <End Role="ProductFinder" EntitySet="ProductFinder" />
+      <End Role="ProductFinderLinks" EntitySet="ProductFinderLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductFinderLinks_ProductFinderTaxonomies" Association="Self.FK_ProductFinderLinks_ProductFinderTaxonomies">
+      <End Role="ProductFinderTaxonomies" EntitySet="ProductFinderTaxonomies" />
+      <End Role="ProductFinderLinks" EntitySet="ProductFinderLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_region_country_tbl" Association="Self.FK_region_country_tbl">
+      <End Role="country_tbl" EntitySet="country_tbl" />
+      <End Role="region_tbl" EntitySet="region_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesOfficeServiceLocations_BusinessUnits" Association="Self.FK_SalesOfficeServiceLocations_BusinessUnits">
+      <End Role="BusinessUnits" EntitySet="BusinessUnits" />
+      <End Role="SalesOfficeServiceLocations" EntitySet="SalesOfficeServiceLocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesOfficeServiceLocations_SalesOffices" Association="Self.FK_SalesOfficeServiceLocations_SalesOffices">
+      <End Role="SalesOffices" EntitySet="SalesOffices" />
+      <End Role="SalesOfficeServiceLocations" EntitySet="SalesOfficeServiceLocations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
